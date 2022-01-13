@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arjun Nair</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header hidden>
+            <a id="arjun" href="#">Arjun Nair</a>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav class="navSections">
+                <ul>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#experience">experience</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="transparencyCover" hidden>
+        </div>
+        <section id="landingPage">
+            <div id="sidebar" hidden>
+                <div class="sidebarButton">
+                    <a href="https://github.com/arjunnair28/" target="_blank"><img src="images/githubLogo.png"></a>
+                </div>
+                <div class="sidebarButton">
+                    <a href="https://www.linkedin.com/in/arjun-nair28/" target="_blank"><img src="images/linkedinLogo.png"></a>
+                </div>
+                <div class="sidebarButton">
+                    <a href="mailto:anair01@uoguelph.ca"><img src="images/email.png"></a>
+                </div>
+            </div>
+            <div class="center">
+                <pre>
+                    <code id="welcomeText"></code>
+                </pre>
+            </div>
+            <a href="#about">
+            <div class="scrollArrow" hidden>
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="123.97px" height="123.97px" viewBox="0 0 123.97 123.97" style="enable-background:new 0 0 123.97 123.97;"
+	 xml:space="preserve">
+<g>
+	<path d="M51.802,96.062c2.801,2.801,6.5,4.2,10.2,4.2s7.4-1.399,10.2-4.2l47.3-47.3c5.5-5.5,6.101-14.6,0.8-20.3
+		c-5.6-6.1-15.1-6.3-20.899-0.5l-30.4,30.3c-3.899,3.9-10.2,3.9-14.1,0l-30.3-30.3c-5.801-5.8-15.301-5.7-20.9,0.5
+		c-5.3,5.7-4.8,14.8,0.8,20.3L51.802,96.062z"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+            </div>
+            </a>
+        </section>
+        <section id="about" hidden>
+            <div id="aboutFirstHalf">
+                <h2 class="aboutHeader" id="aboutHeaderP1">about</h2>
+                <p id="aboutText">
+                    I'm Arjun, a passionate learner and aspiring software developer currently in my 3rd year at the University of Guelph, pursuing a Computer Science major and a Business minor.
+                    <br>
+                    <br>
+                    <a href="#experience" id="aboutWorkLink">Take a look at some of the places I've worked at.</a>
+                    <br>
+                    <br>
+                    Feel free to <a href="#contact" id="aboutContactLink">reach out to me</a> to discuss opportunities<br class="mobileHidden"> or just to chat!
+                </p>
+            </div>
+            <div id="aboutSecondHalf">
+                <h2 class="aboutHeader" id="aboutHeaderP2">me.</h2>
+                <div>
+                    <img id="skillTree" src="images/skillTree.png">
+                </div>
+            </div>
+        </section>
+        <section id="experience" hidden>
+            <div id="experienceContent">
+                <h2 id="experienceHeader">experience.</h2>
+                <div id="jobTiles" class="jobTile">
+                    <div id="adknownTile">
+                        <img src="images/adknownLogo.png">
+                        <div id="adknownInfoCover" hidden>
+                            <h3>Adknown</h3>
+                            <ul>
+                                <li>Converted full-stack jQuery sites to use React and Material UI</li>
+                                <li>Participated in weekly sprints and actively contributed to the team's tasks</li>
+                                <li>Documented new and updated tools for both non&#8209;technical users and developers</li>
+                            </ul>
+                            <a id="adknownReportLink">Read more</a>
+                        </div>
+                    </div>
+                    <div id="g42Tile">
+                        <img src="images/g42Logo.png">
+                        <div id="g42InfoCover" hidden>
+                            <h3>Group 42</h3>
+                            <ul>
+                                <li>Worked with Neo4j and Python to build a recommendation system for treating patients</li>
+                                <li>Created a web application to submit information and receive a prediction from the ML algorithm</li>
+                                <li>Developed multiple other visualizations and data manipulation/automation projects related to medical insurance claims</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <p>If you'd like to see more, view my <a id="resumeLink" href="assets/ARJUN_NAIR_RESUME.pdf" target="_blank">resume.</a></p>
+            </div>
+        </section>
+        <section id="contact" hidden>
+            <div id="contactContent">
+                <h2 id="contactHeader">contact me.</h2>
+                <div id="contactFormContainer">
+
+                </div>
+            </div>
+        </section>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
