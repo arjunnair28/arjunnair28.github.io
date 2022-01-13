@@ -1,4 +1,4 @@
-jQuery(document).ready(() => {
+$(document).ready(() => {
 
     let app = $('#welcomeText')[0];
 
