@@ -6,7 +6,7 @@
 
 html {
     scroll-behavior: smooth;
-    word-break: break-word;
+    word-break: normal;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -261,7 +261,7 @@ section:not(#landingPage):not(.report){
 #aboutText {
     font-size: 21px;
     font-weight: 200;
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue', sans-serif;
     line-height: 3rem;
     margin-left: 5px;
     color: #edf0f1;
@@ -303,17 +303,6 @@ section:not(#landingPage):not(.report){
         display: none;
     }
 }
-
-/* @media (min-width: 480px) and (max-width: 1400px) {
-    .aboutHeader {
-        font-size: 8vh;
-        margin: 0 0 20px 0;
-    }
-    #aboutText {
-        font-size: 2vh;
-        line-height: 2.6rem;
-    }
-} */
 
 #aboutSecondHalf {
     padding: 30px 50px;
@@ -418,13 +407,13 @@ img {
 #experienceContent p {
     font-size: 21px;
     font-weight: 200;
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue', sans-serif;
     margin: 40px;
     color: #edf0f1;
     text-align: center;
 }
 
-#experienceContent p a:hover, #adknownTile a:hover {
+#experienceContent p a:hover, #adknownTile a:hover, small a {
     color: #edf0f1;
 }
 
@@ -442,7 +431,7 @@ img {
     padding: 30px;
     display: none;
     color: #edf0f1;
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue', sans-serif;
     font-weight: 200;
     line-height: 1.2rem;
     text-align: left;
@@ -452,12 +441,6 @@ img {
 @media (max-width: 480px) {
     #adknownInfoCover, #g42InfoCover {
         font-size: 2.5vw;
-    }
-}
-
-@media (min-width: 480px) and (max-width: 960px) {
-    .aboutHeader, #experienceHeader, #contactHeader {
-        font-size: 10vh;
     }
 }
 
@@ -501,13 +484,108 @@ img {
 
 #contact {
     background-color: #323031;
-    display: none;
+}
+
+#contactFormContainer {
+    text-align: center;
+    margin: 0 22.5vw;
+}
+
+@media (max-width: 1200px) {
+    #contactFormContainer {
+        text-align: center;
+        margin: 10vh 10vw;
+    }
 }
 
 #contactContent {
     padding: 10px 50px;
     width: 100vw;
     justify-content: center;
+}
+
+input, textarea {
+    color: #edf0f1;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    border-radius: 8px;
+    line-height: 22px;
+    background-color: transparent;
+    border: 2px solid #FF7700;
+    padding: 13px;
+    margin-bottom: 35px;
+    width: 100%;
+    outline: 0;
+}
+
+textarea {
+    height: 30vh;
+    line-height: 1.5rem;
+    resize: vertical;
+}
+
+#submitButton {
+    margin-top: -15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: #edf0f1;
+    border: 0;
+    background-color: #FF7700;
+    cursor: pointer;
+    padding: 10px 0;
+}
+
+#loader {
+    margin-top: -15px;
+    border: 4px solid #edf0f1;
+    border-top: 4px solid #FF7700;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.inputGroup {
+    position: relative;
+    color: #edf0f1;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    align-items: center;
+}
+
+.floatingLabel {
+    font-size: 18px;
+    position: absolute;
+    pointer-events: none;
+    top: 15px;
+    left: 12px;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    font-weight: 300;
+}
+
+input:focus ~ .floatingLabel,
+textarea:focus ~ .floatingLabel,
+input:not(:focus):valid ~ .floatingLabel,
+textarea:not(:focus):valid ~ .floatingLabel {
+    top: -25px;
+    bottom: 0px;
+    left: 3px;
+    font-size: 16px;
+    font-weight: 200;
+    opacity: 0.9;
 }
 
 #contactHeader {
@@ -526,12 +604,46 @@ img {
         padding: 20px;
     }
     #contactHeader {
-        font-size: 60px;
+        font-size: 55px;
         margin: 10px 0 20px 0;
         color: #edf0f1;
         text-shadow: 0;
         text-align: left;
     }
+}
+
+@media (min-width: 480px) and (max-width: 960px) {
+    .aboutHeader, #experienceHeader, #contactHeader {
+        font-size: 10vh;
+    }
+}
+
+#successOverlay, #failureOverlay {
+    color: #edf0f1;
+    font-size: 30px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+#backButton {
+    width: 30vw;
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 9px;
+    border: 0;
+    padding: 15px;
+    cursor: pointer;
+}
+
+small {
+    line-height: 1.5rem;
+    font-size: 15px;
+    margin-top: 15px;
 }
 
 #reportContent {
@@ -547,9 +659,9 @@ img {
 
 @media (max-width: 1080px) {
     #reportContent {
-        width: 94%;
-        margin-left: 2vw;
-        margin-right: 2vw;
+        width: 98%;
+        margin-left: 1vw;
+        margin-right: 1vw;
     }
 }
 

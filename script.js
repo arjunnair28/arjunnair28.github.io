@@ -1,10 +1,17 @@
 $(document).ready(() => {
 
+    $('html, body').css({
+        overflow: 'hidden',
+        height: '100%'
+    });
+
     let app = $('#welcomeText')[0];
 
     let typewriter = new Typewriter(app, {
         cursor: '&#9646;'
     });
+
+    emailjs.init('user_C3zTNIcbpRIRXac4Qp0gV');
 
     if (location.href.indexOf('#') === -1) {
         typewriter.typeString("Hi. I'm Arjun").start().callFunction(() => {
@@ -14,7 +21,10 @@ $(document).ready(() => {
                 $('header').css('display', 'flex');
                 $('.scrollArrow').css('display', 'block');
                 $('section').css('display', 'flex');
-                $('#contact').css('display', 'none');
+                $('html, body').css({
+                    overflow: 'auto',
+                    height: 'auto'
+                });
             }, 500);
         });
     } else {
@@ -23,7 +33,10 @@ $(document).ready(() => {
         $('header').css('display', 'flex');
         $('.scrollArrow').css('display', 'block');
         $('section').css('display', 'flex');
-        $('#contact').css('display', 'none');
+        $('html, body').css({
+            overflow: 'auto',
+            height: 'auto'
+        });
     }
     
     $('.burger').click(() => {
@@ -63,6 +76,33 @@ $(document).ready(() => {
         $('#adknownReportLink').html("Read more &rarr;");
     }, () => {
         $('#adknownReportLink').text("Read more.");
+    });
+
+    const contactForm = $('#contact-form')[0];
+
+    $('#contact-form').submit((e) => {
+        e.preventDefault();
+        $('#submitButton').css('display', 'none');
+        $('#loader').css('display', 'inline-block');
+        emailjs.sendForm('service_z02i00s', 'template_kch4bv6', contactForm)
+        .then(() => {
+            $('#successOverlay').css('display', 'flex');
+        }, () => {
+            $('#failureOverlay').css('display', 'flex');
+        }).finally(() => {
+            $('#contact-form').css('display', 'none');
+            $('#backButton').css('display', 'inline');
+            $('#loader').css('display', 'none');
+        });
+    });
+
+    $('#backButton').click(() => {
+        $('#contact-form').css('display', 'block');
+        $('#submitButton').css('display', 'block');
+        $('#successOverlay').css('display', 'none');
+        $('#failureOverlay').css('display', 'none');
+        $('#backButton').css('display', 'none');
+        $('#contact-form').trigger('reset');
     });
 
 })
