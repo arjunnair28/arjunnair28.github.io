@@ -672,6 +672,12 @@ small {
     }
 }
 
+@media (max-width: 480px) {
+    #reportContent {
+        text-align: left;
+    }
+}
+
 #reportContent a {
     color: black;
 }
