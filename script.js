@@ -72,10 +72,20 @@ $(document).ready(() => {
         $('#g42InfoCover').toggleClass('show');
     });
 
+    $('#tulipTile').hover(() => {
+        $('#tulipInfoCover').toggleClass('show');
+    });
+
     $('#adknownReportLink').hover(() => {
         $('#adknownReportLink').html("Read more &rarr;");
     }, () => {
         $('#adknownReportLink').text("Read more.");
+    });
+
+    $('#tulipReportLink').hover(() => {
+        $('#tulipReportLink').html("Read more &rarr;");
+    }, () => {
+        $('#tulipReportLink').text("Read more.");
     });
 
     const contactForm = $('#contact-form')[0];

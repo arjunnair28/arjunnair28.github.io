@@ -382,8 +382,15 @@ img {
     padding: 45px;
 }
 
+#tulipTile {
+    padding: 25px;
+}
+
 @media (max-width: 480px) {
     #adknownTile {
+        padding: 30px;
+    }
+    #tulipTile {
         padding: 30px;
     }
     .jobTile div {
@@ -413,11 +420,11 @@ img {
     text-align: center;
 }
 
-#experienceContent p a:hover, #adknownTile a:hover, small a {
+#experienceContent p a:hover, #adknownTile a:hover, #tulipTile a:hover, small a {
     color: #edf0f1;
 }
 
-#adknownInfoCover, #g42InfoCover {
+#adknownInfoCover, #g42InfoCover, #tulipInfoCover {
     position: absolute;
     top: 0;
     left: 0;
@@ -439,7 +446,7 @@ img {
 }
 
 @media (max-width: 480px) {
-    #adknownInfoCover, #g42InfoCover {
+    #adknownInfoCover, #g42InfoCover, #tulipInfoCover {
         font-size: 2.5vw;
     }
 }
@@ -450,14 +457,14 @@ img {
         height: 50vw;
     }
 
-    #adknownInfoCover, #g42InfoCover {
+    #adknownInfoCover, #g42InfoCover, #tulipInfoCover {
         line-height: 2rem;
         font-size: 3.5vw;
     }
 }
 
 
-#adknownInfoCover.show, #g42InfoCover.show {
+#adknownInfoCover.show, #g42InfoCover.show, #tulipInfoCover.show {
     display: flex;
 }
 
